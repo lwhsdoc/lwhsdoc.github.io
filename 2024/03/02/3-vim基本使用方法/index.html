@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>3.vim基本使用方法 | lwhsdoc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="vim简单入门 2024年3月2日 3:09 虽然说大部分发行版默认编辑器不是vim而是nano，但是他的通用性很好，在Linux和FreeBSD等等系统上都可以用。 这里介绍他最基本的使用方法↓ 首先，你要确定你的系统有没有安装vim vim -v 如果有反应，并且他打开了一个显示版本号的页面，你可以输“：q”退出，如果报错提示“command not found”就请安装它 Debian&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.vim基本使用方法">
+<meta property="og:url" content="http://example.com/2024/03/02/3-vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="lwhsdoc">
+<meta property="og:description" content="vim简单入门 2024年3月2日 3:09 虽然说大部分发行版默认编辑器不是vim而是nano，但是他的通用性很好，在Linux和FreeBSD等等系统上都可以用。 这里介绍他最基本的使用方法↓ 首先，你要确定你的系统有没有安装vim vim -v 如果有反应，并且他打开了一个显示版本号的页面，你可以输“：q”退出，如果报错提示“command not found”就请安装它 Debian&amp;#x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-01T19:21:41.000Z">
+<meta property="article:modified_time" content="2024-03-01T19:23:26.280Z">
+<meta property="article:author" content="lwhs">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="lwhsdoc" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lwhsdoc</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">关于一些工具的基本使用方法</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-3-vim基本使用方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/3-vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2024-03-01T19:21:41.000Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      3.vim基本使用方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>vim简单入门</p>
+<p>2024年3月2日</p>
+<p>3:09</p>
+<p><strong>虽然说大部分发行版默认编辑器不是vim而是nano，但是他的通用性很好，在Linux和FreeBSD等等系统上都可以用。</strong></p>
+<p><strong>这里介绍他最基本的使用方法↓</strong></p>
+<p><strong>首先，你要确定你的系统有没有安装vim</strong></p>
+<p><code>vim -v</code></p>
+<p><strong>如果有反应，并且他打开了一个显示版本号的页面，你可以输“：q”退出，如果报错提示“command not found”就请安装它</strong></p>
+<p><strong>Debian&#x2F;Ubuntu↓</strong></p>
+<p><code>sudo apt install vim -y</code></p>
+<p><strong>rhel&#x2F;alma&#x2F;rocky因为自带vim所以说不需要单独安装</strong></p>
+<p><strong>使用方法↓</strong></p>
+<p><strong>vim默认情况下vim是命令模式，按下<code>i</code>进入编辑模式以后你就可以像普通的文本编辑器编辑文本。</strong></p>
+<p><strong>保存、退出或者是保存后退出或者是强制退出需要进入命令模式，从编辑模式退出到命令模式按下<code>esc</code>退出。</strong></p>
+<p><strong>命令模式下输入退出vim:<code>:q</code>（如果你对文本做了更改他会报错）</strong></p>
+<p><strong>保存更改输入<code>:w</code></strong></p>
+<p><strong>保存更改并退出输入<code>:wq</code></strong></p>
+<p><strong>强制退出不保留更改输入<code>:q!</code></strong></p>
+<p><strong>请注意，仅仅适用于最基本的使用，仅仅适用于日常编辑文本的工作。提醒一句，如果你要查看重要文本，而不想对他做出任何的整改，防患于未然，请用view。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/3-vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="clt91o6c900007cs659epbdr2" data-title="3.vim基本使用方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/03/02/2-git%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2.git入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/3-vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">3.vim基本使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/2-git%E5%85%A5%E9%97%A8/">2.git入门</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/1-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">1.第一篇文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 lwhs<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
