@@ -19,13 +19,5 @@ jobs:
 
     - name: Install Flarum
       run: |
-<<<<<<< HEAD
         composer create-project flarum/flarum .
         
-=======
-        git clone https://github.com/flarum/flarum.git
-        cd flarum
-        composer install
-        php artisan key:generate
-        php artisan migrate --seed
->>>>>>> 32b4cd1902411eddff1d4756c9e844a88728abf2
