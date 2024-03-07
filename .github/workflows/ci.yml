@@ -1,4 +1,4 @@
-name: Install Flarum on Ubuntu
+name: Install Flarum
 
 on: [push]
 
@@ -7,24 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
-        extensions: mbstring, intl, gd, xml, soap, zip, pdo_mysql
-
-    - name: Install Composer
+    - name: Set up environment
       run: |
-        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+        sudo apt-get update
+        sudo apt-get install php php-cli php-mbstring git unzip
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
     - name: Install Flarum
       run: |
-        git clone https://github.com/flarum/flarum.git
-        cd flarum
-        composer install
-        cp .env.example .env
-        php artisan key:generate
-        php artisan migrate --seed
+        composer create-project flarum/flarum .
+        
