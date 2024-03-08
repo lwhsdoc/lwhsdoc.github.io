@@ -1,0 +1,26 @@
+name: PHP Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        extensions: mbstring, intl, gd, xml, soap, zip, curl, json, iconv
+
+    - name: Install Composer dependencies
+      run: composer install --no-interaction --no-progress --prefer-dist
+
+    - name: Run tests
+      run: vendor/bin/phpunit
