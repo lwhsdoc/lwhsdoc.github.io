@@ -1,26 +1,26 @@
-name: PHP Deployment
+name: Flarum Installation
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup PHP
+    - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '7.4'
-        extensions: mbstring, intl, gd, xml, soap, zip, curl, json, iconv
+        extensions: mbstring, intl, gd, xml, soap, zip, pdo_mysql, curl, json, iconv
 
     - name: Install Composer dependencies
-      run: composer install --no-interaction --no-progress --prefer-dist
+      run: |
+        composer install --no-interaction --no-progress --prefer-dist
 
-    - name: Run tests
-      run: vendor/bin/phpunit
+    - name: Set up Flarum
+      run: |
+        cp -R public html
+        php flarum install -n --url=http://localhost --title="lwhsforum" --admin-email=lwh20082021@outlook.com --admin-password=Lwh20080615
