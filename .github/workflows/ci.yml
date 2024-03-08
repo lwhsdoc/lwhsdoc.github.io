@@ -23,4 +23,4 @@ jobs:
     - name: Set up Flarum
       run: |
         cp -R public html
-        php flarum install -n --title="lwhsforum" --admin-email=lwh20082021@outlook.com --admin-password=Lwh20080615
+        php flarum install -n
